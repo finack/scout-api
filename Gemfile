@@ -1,7 +1,7 @@
 source :rubygems
 
 gem "hashie", "~> 0.1.8"
-gem "httparty", "~> 0.5.0"
+gem "httparty"
 gem "nokogiri"
 
 group :development do

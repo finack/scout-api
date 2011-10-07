@@ -1,21 +1,22 @@
-== 0.9.0
+== 1.0.2
 
-Initial release.
+* Removed Server#active_alerts. This XML is not being returned.
+* Changed require calls to relative paths
+* No longer requiring a specific version of HTTParty to fix compatibly issues w/Ruby Gems 1.6+
+
+== 1.0.1
+
+* Removed debugging output in Metric#to_sparkline
+
+== 1.0.0
+
+* Updates for YARD documentation formatting
 
 == 0.9.1
 
 * Fixed Ruby 1.9.2 issue accessing Server#key
 * Documentation updates
 
-== 1.0.0
+== 0.9.0
 
-* Updates for YARD documentation formatting
-
-== 1.0.1
-
-* Removed debugging output in Metric#to_sparkline
-
-== Master
-
-* Removed Server#active_alerts. This XML is not being returned.
-* Changed require calls to relative paths
+Initial release.
