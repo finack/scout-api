@@ -1,3 +1,8 @@
+== 1.0.3
+
+* Fixing response header change w/HTTParty 0.8
+* Removed broken rake console rake task
+
 == 1.0.2
 
 * Removed Server#active_alerts. This XML is not being returned.

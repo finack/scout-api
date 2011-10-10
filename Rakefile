@@ -28,11 +28,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-desc "Open an irb session preloaded with this library"
-task :console do
-  sh "irb -rubygems -I lib -r scout.rb"
-end
-
 require "rake/testtask"
 Rake::TestTask.new do |test|
   test.libs << "test"

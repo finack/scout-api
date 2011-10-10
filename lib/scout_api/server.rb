@@ -118,8 +118,7 @@ class Scout::Server < Hashie::Mash
     :query => {:client => {:name => name, :copy_plugins_from_client_id => id}, :api_version => Scout::VERSION})
     
     raise Scout::Error, response['errors']['error'] if response['errors']
-    
-    first(response.headers['id'].first.to_i)
+    first(response.headers['id'].to_i)
   end
   
   # Delete a server by <tt>id</tt>. If an error occurs, a [Scout::Error] is raised.
@@ -131,9 +130,9 @@ class Scout::Server < Hashie::Mash
   def self.delete(id)
     response = Scout::Account.delete("/#{Scout::Account.param}/clients/#{id}.xml?api_version=#{Scout::VERSION}")
 
-    if response.headers['status'].first.match('404')
+    if response.headers['status'].match('404')
       raise Scout::Error, "Server Not Found"
-    elsif !response.headers['status'].first.match('200')
+    elsif !response.headers['status'].match('200')
       raise Scout::Error, "An error occured"
     else
       return true
