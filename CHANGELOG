@@ -1,3 +1,8 @@
+== Master
+
+* Better error handling
+* Ignoring Gemfile.lock
+
 == 1.0.3
 
 * Fixing response header change w/HTTParty 0.8
