@@ -61,6 +61,6 @@ class Scout::Account
     uri = "/#{param}" + uri + (uri.include?('?') ? '&' : '?') + "api_version=#{Scout::VERSION}"
     #puts "GET: #{uri}"
     response = http_get(uri)
-    response.code.to_s =~ /^(4|5)/ ? raise( Scout::Error,response.message) : response
+    response.code.to_s =~ /^(4|5)/ ? raise( Scout::Error,response['error'] ? response['error']['message'] : response.message) : response
   end
 end

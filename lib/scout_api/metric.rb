@@ -225,12 +225,7 @@ class Scout::Metric < Hashie::Mash
     end
     
     response = Scout::Account.get("/data/value?name=#{CGI.escape(name.to_s)}&ids=#{ids}&function=#{function}&consolidate=#{consolidate}&plugin_ids=#{options[:plugin_ids]}&server_ids=#{options[:server_ids]}&group_ids=#{options[:group_ids]}&start=#{start_time}&end=#{end_time}")
-
-    if response['data']
-      response['data']
-    else
-      raise Scout::Error, response['error']
-    end
+    response['data']
   end
   
    # API expects times in epoch.
