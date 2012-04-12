@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{scout_api}
-  s.version = "1.0.3"
+  s.version = "1.0.4.pre"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jesse Newland", "Derek Haynes"]
-  s.date = %q{2011-10-10}
+  s.date = %q{2012-04-12}
   s.description = %q{A library for interacting with Scout (http://scoutapp.com), a hosted server monitoring service. Query for metric data, manage servers, and more.}
   s.email = %q{support@scoutapp.com}
   s.extra_rdoc_files = [
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
     ".document",
     "CHANGELOG",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE",
     "README.rdoc",
     "Rakefile",
