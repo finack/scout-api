@@ -90,7 +90,7 @@ class Scout::MetricProxy
   # @return [String]
   def metric_from_options(options)
     metric_name = options[:name]
-    raise Scout::Error, "The name of the metric is required (:name => metric_name)" if metric_name.blank?
+    raise Scout::Error, "The name of the metric is required (:name => metric_name)" if (metric_name.nil? or metric_name == '')
     metric_name
   end
   

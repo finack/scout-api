@@ -120,12 +120,10 @@ class Scout::Metric < Hashie::Mash
     consolidate,name,ids=series_options(id_or_name,options)
     
     response = Scout::Account.get("/descriptors/series.xml?name=#{CGI.escape(name.to_s)}&ids=#{ids}&function=#{function}&consolidate=#{consolidate}&plugin_ids=#{options[:plugin_ids]}&server_ids=#{options[:server_ids]}&group_ids=#{options[:group_ids]}&start=#{start_time}&end=#{end_time}")
-
     if response['records']
-      response['records']
       response['records'].values.flatten.map { |r| [Time.parse(r['time']),r['value'].to_f] }
     else
-      raise Scout::Error, response['error']
+      []
     end
   end
   

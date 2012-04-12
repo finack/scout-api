@@ -2,6 +2,8 @@
 
 * Better error handling
 * Ignoring Gemfile.lock
+* Removing call to #blank? as that requires Rails
+* Returning an empty array when Metric#to_array handles a response w/no records rather than raising an exception
 
 == 1.0.3
 
