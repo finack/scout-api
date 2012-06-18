@@ -1,3 +1,7 @@
+== 1.0.5.pre
+
+* Hacks to allow for new Hashie versions. See https://github.com/intridea/hashie/issues/14
+
 == 1.0.4
 
 * Better error handling

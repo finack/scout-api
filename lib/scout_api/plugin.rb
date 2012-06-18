@@ -36,7 +36,8 @@ class Scout::Plugin < Hashie::Mash
   
   attr_reader :descriptor_hash #:nodoc:
 
-  def initialize(hash) #:nodoc:
+  # 2nd parameter is ignored/a hack because of this open Hashie issue: https://github.com/intridea/hashie/issues/14
+  def initialize(hash, ignore = nil) #:nodoc:
     if hash['descriptors'] && hash['descriptors']['descriptor']
       @descriptor_hash = hash['descriptors']['descriptor']
       hash.delete('descriptors')

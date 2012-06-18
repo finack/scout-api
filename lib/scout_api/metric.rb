@@ -1,7 +1,8 @@
 class Scout::Metric < Hashie::Mash
   attr_accessor :server, :plugin
   
-  def initialize(hash) #:nodoc:
+  # 2nd parameter is ignored/a hack because of this open Hashie issue: https://github.com/intridea/hashie/issues/14
+  def initialize(hash, ignore=nil) #:nodoc:
     super(hash)
     @avg_calc = Scout::MetricCalculation.new(self,:AVG)
     @avg_calc.metric_name = identifier

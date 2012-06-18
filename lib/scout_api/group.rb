@@ -34,7 +34,8 @@ class Scout::Group < Hashie::Mash
   #  Scout::Group.metrics.average(:name => 'Memory Used').to_sparkline
   attr_reader :metrics
 
-  def initialize(hash) #:nodoc:
+  # 2nd parameter is ignored/a hack because of this open Hashie issue: https://github.com/intridea/hashie/issues/14
+  def initialize(hash, ignore=nil) #:nodoc:
     @metrics = Scout::MetricProxy.new(self)
     super(hash)
   end
