@@ -148,6 +148,13 @@ class Scout::Server < Hashie::Mash
     response['alerts'].map { |alert| decorate_with_server(Scout::Alert.new(alert)) }
   end
 
+  # Delete this server instance. If an error occurs, a [Scout::Error] is raised.
+  #
+  # @return [true]
+  def destroy
+    Scout::Server.delete(id)
+  end
+
   # Details about all plugins for this server
   #
   # @return [Array] An array of {Scout::Plugin }objects

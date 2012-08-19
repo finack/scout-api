@@ -92,5 +92,12 @@ class ServerTest < Test::Unit::TestCase
     @scout.stub_delete('clients/1234.xml','client.xml', {'status' => '200 OK'})
     assert Scout::Server.delete(1234)
   end
-  
+
+  def test_destroy
+    @scout.stub_get('clients/13431.xml', 'client.xml')
+    @scout.stub_delete('clients/13431.xml', 'client.xml', {'status' => '200 OK'})
+    server = Scout::Server.first(13431)
+    assert server.destroy
+  end
+
 end
